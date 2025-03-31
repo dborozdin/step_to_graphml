@@ -1,0 +1,438 @@
+{
+    "_comment": "Пример –  Корневой объект JSON",
+    "format": "ESKD_JSON_V1",
+    "schema": "GOST_R_2_525",
+    "instances": [
+        {
+            "_comment": "Указание обозначения и наименования описываемого изделия АБВГ.123456.001",
+            "id": "#1",
+            "type": "eskd_product",
+            "attributes": {
+                "id": "АБВГ.123456.001",
+                "name": "Прижим",
+                "description": "Сборочная единица",
+                "frame_of_reference": "#33",
+                "product_type": ".ASSEMBLY."
+            }
+        },
+        {
+            "_comment": "Атрибуты версии изделия АБВГ.123456.001",
+            "id": "#2",
+            "type": "eskd_product_definition_formation",
+            "attributes": {
+                "id": "001",
+                "description": "",
+                "of_product": "#1",
+                "make_or_buy": ".MADE.",
+                "standard": ".F."
+            }
+        },
+        {
+            "_comment": "Описание  версии  001 изделия АБВГ.123456.001 в контексте 'конструктивная структура'",
+            "id": "#3",
+            "type": "product_definition",
+            "attributes": {
+                "id": "EPS001",
+                "description": " Описание для формирования ЭСК по ГОСТ Р 2.525",
+                "formation": "#2",
+                "frame_of_reference": "#37"
+            }
+        },
+        {
+            "_comment": "Связь между изделием АБВГ.123456.001 - EPS001 ( #3) и виртуальной сборочной единицей АБВГ.123456.001-01 – EPS004 ( #7).",
+            "id": "#4",
+            "type": "next_assembly_usage_occurrence+quantified_assembly_component_usage",
+            "attributes": {
+                "relating_product_definition": "#3",
+                "related_product_definition": "#7",
+                "id": "EPSREL003",
+                "name": "",
+                "reference_designator": "",
+                "quantity": "#25"
+            }
+        },
+        {
+            "_comment": "Указание обозначения и наименования виртуальной сборочной единицы АБВГ.123456.001-01",
+            "id": "#5",
+            "type": "eskd_product",
+            "attributes": {
+                "id": "АБВГ.123456.001-01",
+                "name": "Набор стандартных изделий ",
+                "description": "Виртуальная сборочная единица ",
+                "frame_of_reference": "#34",
+                "product_type": ".VIRTUAL."
+            }
+        },
+        {
+            "_comment": "Атрибуты версии виртуальной сборочной единицы АБВГ.123456.001-01",
+            "id": "#6",
+            "type": "eskd_product_definition_formation",
+            "attributes": {
+                "id": "001",
+                "description": "",
+                "of_product": "#5",
+                "make_or_buy": ".NOT_KNOWN.",
+                "standard ": ".F."
+            }
+        },
+        {
+            "_comment": "Описание версии 001 виртуальной сборочной единицы АБВГ.123456.001-01 в контексте «конструктивная структура»",
+            "id": "#7",
+            "type": "product_definition",
+            "attributes": {
+                "id": "EPS004",
+                "description": "",
+                "formation": "#6",
+                "frame_of_reference": "#37"
+            }
+        },
+        {
+            "_comment": "Связь между виртуальной сборочной единицей  АБВГ.123456.001-01 (#7) и стандартным изделием «Трубка ТВ-40,3, белая, 1сорта ГОСТ 19034-82» (#11).  Указано, что количество входящих изделий определено в объекте measure_with_unit (#12)",
+            "id": "#8",
+            "type": "next_assembly_usage_occurrence+quantified_assembly_component_usage",
+            "attributes": {
+                "relating_product_definition": "#7",
+                "related_product_definition": "#11",
+                "id": "EPSREL004",
+                "name": "Связь с бронзовой втулкой",
+                "reference_designator": "5",
+                "quantity": "#12"
+            }
+        },
+        {
+            "_comment": "Указание обозначения и наименования изделия «Трубка ТВ-40,3, белая, 1сорта ГОСТ 19034-82»",
+            "id": "#9",
+            "type": "eskd_product",
+            "attributes": {
+                "id": " Трубка ТВ-40,3, белая, 1 сорта ГОСТ 19034-82",
+                "name": "Трубка",
+                "description": " Материал в составе сборки ",
+                "frame_of_reference": "#36",
+                "product_type": ".MATERIAL."
+            }
+        },
+        {
+            "_comment": "Атрибуты версии изделия «Трубка ТВ-40,3, белая, 1сорта ГОСТ 19034-82»  ",
+            "id": "#10",
+            "type": "eskd_product_definition_formation",
+            "attributes": {
+                "id": "001",
+                "description": "",
+                "of_product": "#9",
+                "make_or_buy": ".BOUGHT.",
+                "standard ": ".F."
+            }
+        },
+        {
+            "_comment": "Описание версии 001 изделия «Трубка ТВ-40,3, белая, 1сорта ГОСТ 19034-82»  в контексте «конструктивная структура» ",
+            "id": "#11",
+            "type": "product_definition",
+            "attributes": {
+                "id": "EPS008",
+                "description": "",
+                "formation": "#10",
+                "frame_of_reference": "#37"
+            }
+        },
+        {
+            "_comment": "Количество, выраженное в единицах измерения (#12) ",
+            "id": "#12",
+            "type": "measure_with_unit",
+            "attributes": {
+                "unit_component": "#13",
+                "value_component": "0,4"
+            }
+        },
+        {
+            "_comment": "Наименование единицы измерения (#13)",
+            "id": "#13",
+            "type": "context_dependent_unit",
+            "attributes": {
+                "id": "м.",
+                "name": "Метр"
+            }
+        },
+        {
+            "_comment": " Связь между виртуальной сборочной единицей АБВГ.123456.001-01 (#7) и стандартным изделием «Шайба 12.01.08кп.016ГОСТ10450-78» (#17)  ",
+            "id": "#14",
+            "type": "next_assembly_usage_occurrence+quantified_assembly_component_usage",
+            "attributes": {
+                "relating_product_definition": "#7",
+                "related_product_definition": "#17",
+                "id": " EPSREL005",
+                "name": "",
+                "reference_designator": "3",
+                "quantity": "#18"
+            }
+        },
+        {
+            "_comment": "Указание обозначения и наименования изделия «Шайба 12.01.08кп.016 ГОСТ10450-78»",
+            "id": "#15",
+            "type": "eskd_product",
+            "attributes": {
+                "id": " Шайба 12.01.08кп.016ГОСТ10450-78",
+                "name": "Шайба",
+                "description": "Стандартное изделие - деталь",
+                "frame_of_reference": "#35",
+                "product_type": ".PART."
+            }
+        },
+        {
+            "_comment": "Атрибуты версии изделия «Шайба 12.01.08кп.016ГОСТ10450-78» ",
+            "id": "#16",
+            "type": "eskd_product_definition_formation",
+            "attributes": {
+                "id": "001",
+                "of_product": "#15",
+                "make_or_buy": ".BOUGHT.",
+                "standard": ".Y."
+            }
+        },
+        {
+            "_comment": "Описание версии 001 изделия «Шайба 12.01.08кп.016ГОСТ10450-78»  в контексте «конструктивная структура»  ",
+            "id": "#17",
+            "type": "product_definition",
+            "attributes": {
+                "id": "001",
+                "description": "",
+                "formation": "#16",
+                "frame_of_reference": "#37"
+            }
+        },
+        {
+            "_comment": "Число компонент, выраженное в единицах измерения (#18) ",
+            "id": "#18",
+            "type": "measure_with_unit",
+            "attributes": {
+                "unit_component": "#40",
+                "value_component": "4"
+            }
+        },
+        {
+            "_comment": " Связь между изделиями АБВГ.123456.001 ( #3) и АБВГ.715121.006 (#22)  ",
+            "id": "#19",
+            "type": "next_assembly_usage_occurrence+quantified_assembly_component_usage",
+            "attributes": {
+                "relating_product_definition": "#3",
+                "related_product_definition": "#22",
+                "id": " EPSREL001",
+                "name": "",
+                "reference_designator": "2",
+                "quantity": "#23"
+            }
+        },
+        {
+            "_comment": "Указание обозначения и наименования изделия АБВГ.715121.006 ",
+            "id": "#20",
+            "type": "eskd_product",
+            "attributes": {
+                "id": "АБВГ.715121.006",
+                "name": "Ось",
+                "description": "Деталь",
+                "frame_of_reference": "#33",
+                "product_type": ".PART."
+            }
+        },
+        {
+            "_comment": "Атрибуты версии изделия АБВГ.715121.006  ",
+            "id": "#21",
+            "type": "eskd_product_definition_formation",
+            "attributes": {
+                "id": "002",
+                "of_product": "#20",
+                "make_or_buy": ".TAKEN.",
+                "standard": ".F."
+            }
+        },
+        {
+            "_comment": "Описание версии 002 изделия АБВГ.715121.006 в контексте «конструктивная структура»",
+            "id": "#22",
+            "type": "product_definition",
+            "attributes": {
+                "id": "EPS005",
+                "description": "",
+                "formation": "#21",
+                "frame_of_reference": "#37"
+            }
+        },
+        {
+            "_comment": "Количество, выраженное в единицах измерения (#23) ",
+            "id": "#23",
+            "type": "measure_with_unit",
+            "attributes": {
+                "unit_component": "#40",
+                "value_component": "1"
+            }
+        },
+		{
+            "_comment": "Количество, выраженное в единицах измерения (#25) ",
+            "id": "#25",
+            "type": "measure_with_unit",
+            "attributes": {
+                "unit_component": "#40",
+                "value_component": "1"
+            }
+        },
+        {
+			"_comment": " Связь между изделиями  АБВГ.123456.001 (#3) и ЕКУЦ.301527.001 (#29)  ",
+			"id": "#26",
+			"type": "next_assembly_usage_occurrence+quantified_assembly_component_usage",
+			"attributes": {
+				"relating_product_definition": "#3",
+				"related_product_definition": "#29",
+				"name": "",
+				"id": " EPSREL002",
+				"reference_designator": "1",
+				"quantity": "#30"
+			}
+        },
+        {
+            "_comment": "Указание обозначения и наименования изделия ЕКУЦ.301527.001  ",
+            "id": "#27",
+            "type": "eskd_product",
+            "attributes": {
+                "id": "ЕКУЦ.301527.001",
+                "name": "Петля",
+                "description": "Сборочная единица",
+                "frame_of_reference": "#33",
+                "product_type": ".ASSEMBLY."
+            }
+        },
+        {
+            "_comment": "Атрибуты версии изделия ЕКУЦ.301527.001  ",
+            "id": "#28",
+            "type": "eskd_product_definition_formation",
+            "attributes": {
+                "id": "001",
+                "description": "",
+                "of_product": "#27",
+                "make_or_buy": ".COOPERATED.",
+                "standard": ".F."
+            }
+        },
+        {
+            "_comment": "Описание версии 001 изделия ЕКУЦ.301527.001  в контексте «конструктивная структура»",
+            "id": "#29",
+            "type": "product_definition",
+            "attributes": {
+                "id": "EPS003",
+                "description": "",
+                "formation": "#28",
+                "frame_of_reference": "#37"
+            }
+        },
+        {
+            "_comment": "Число компонент, выраженное в единицах измерения (#30) ",
+            "id": "#30",
+            "type": "measure_with_unit",
+            "attributes": {
+                "unit_component": "#40",
+                "value_component": "1"
+            }
+        },
+        {
+            "_comment": " Параметры присоединенного документа",
+            "id": "#31",
+            "type": "document",
+            "attributes": {
+                "id": "АБВГ.123456.001ЭМС",
+                "name": "Прижим. Электронная модель сборочной единицы",
+                "kind": "#32"
+            }
+        },
+        {
+            "_comment": "Описание типа документа  ",
+            "id": "#32",
+            "type": "document_type",
+            "attributes": {
+                "product_data_type": "ЭМСЕ"
+            }
+        },
+        {
+            "_comment": "Описание контекста 28.29.84 ",
+            "id": "#33",
+            "type": "product_context",
+            "attributes": {
+                "application": "ОКПД2",
+                "discipline_type": "28.29.84",
+                "name": "Части оборудования, не имеющие электрических соединений, не включенные в другие группировки"
+            }
+        },
+        {
+            "_comment": "Описание контекста N/A ",
+            "id": "#34",
+            "type": "product_context",
+            "attributes": {
+                "application": "ОКПД2",
+                "discipline_type": "N/A",
+                "name": "Классификация не применяется"
+            }
+        },
+        {
+            "_comment": "Описание контекста 25.94 ",
+            "id": "#35",
+            "type": "product_context",
+            "attributes": {
+                "application": "ОКПД2",
+                "discipline_type": "25.94",
+                "name": "Изделия крепежные и винты крепежные"
+            }
+        },
+        {
+            "_comment": "Описание контекста 20.30",
+            "id": "#36",
+            "type": "product_context",
+            "attributes": {
+                "application": "ОКПД2",
+                "discipline_type": "20.30",
+                "name": "Материалы лакокрасочные и аналогичные для нанесения покрытий"
+            }
+        },
+        {
+            "_comment": "Описание контекста «конструктивная структура»",
+            "id": "#37",
+            "type": "product_definition_context",
+            "attributes": {
+                "application": "Вид структуры",
+                "life_cycle_stage": "конструктивная структура",
+                "name": "конструктивная структура на этапе разработки РКД"
+            }
+        },
+        {
+            "_comment": "Наименование единицы измерения (#40)",
+            "id": "#40",
+            "type": "context_dependent_unit",
+            "attributes": {
+                "id": "шт.",
+                "name": "Штука"
+            }
+        },
+        {
+            "_comment": "Описание организации (#41)",
+            "id": "#41",
+            "type": "organization",
+            "attributes": {
+                "id": "ЕКУЦ",
+                "name": "АО «Организация002»"
+            }
+        },
+        {
+            "_comment": "Описание связи изделия ЕКУЦ.301527.001 с организацией АО «Организация002» ",
+            "id": "#42",
+            "type": "eskd_organization_product_assignment",
+            "attributes": {
+                "assigned_product": "#29",
+                "assigned_organization": "#41",
+                "role": "#43"
+            }
+        },
+        {
+            "_comment": "Описание роли организации",
+            "id": "#43",
+            "type": "organization_role",
+            "attributes": {
+                "name": "Разработчик"
+            }
+        }
+    ]
+}
