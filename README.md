@@ -1,0 +1,1 @@
+Пример отображения сконвертированного файла приведен здесь https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/dborozdin/0e8a8ef10c94f5cb9c5c6c376d6b4f96/raw/f8dc270039e023e60e54142edc7a2dd8594bcb4b/example_product_structure
